@@ -19,5 +19,35 @@ public class Class {
     }
 
     public void setEndTime(Time endTime) {
+        this.endTime = endTime;
     }
+
+    public Time getEndTime() {
+        return endTime;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public Time getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(Time startTime) {
+        this.startTime = startTime;
+    }
+    
 }

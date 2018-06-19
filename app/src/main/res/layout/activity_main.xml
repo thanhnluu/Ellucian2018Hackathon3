@@ -1,26 +1,55 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fbutton="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#fcfcfc"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    >
 
     <TextView
-        android:id="@+id/textbox"
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:fontFamily="monospace"
+        android:textSize="35dp"/>
+
+    <info.hoang8f.widget.FButton
+        android:id="@+id/addGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="4dp"
+        android:layout_gravity="left|top"
+        android:layout_margin="10dp"
+        android:onClick="addGroup"
+        android:text="+"
+        android:textColor="#060606"
+        fbutton:buttonColor="#FFFFFF"
+        fbutton:shadowEnabled="true" />
 
-    <Button
-        android:id="@+id/buttontest"
+    <ListView
+        android:id="@+id/mylist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:dividerHeight="0.5dp"
+        android:divider="#FFFFFF">
+    </ListView>
+
+    <info.hoang8f.widget.FButton
+        android:id="@+id/joinGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="130dp" />
-
-</android.support.constraint.ConstraintLayout>
+        android:layout_marginTop="4dp"
+        android:layout_gravity="left|top"
+        android:layout_margin="10dp"
+        android:onClick="joinGroup"
+        android:text="Join"
+        android:textColor="#060606"
+        fbutton:buttonColor="#FFFFFF"
+        fbutton:shadowEnabled="true" />
+</LinearLayout>

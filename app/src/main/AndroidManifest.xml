@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".CreateGroup" />
+        <activity android:name=".StudyGroupDetails" />
+        <activity android:name=".CreateDiscussionPost" />
+        <activity android:name=".AddClassSchedule"></activity>
     </application>
 
 </manifest>

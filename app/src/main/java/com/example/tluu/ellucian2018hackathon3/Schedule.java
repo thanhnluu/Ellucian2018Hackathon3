@@ -7,6 +7,9 @@ import java.util.Date;
 public class Schedule {
     ArrayList<Class> classes;
 
+    public Schedule(){
+        classes = new ArrayList<>();
+    }
 
     public Schedule(ArrayList<Class> c){
         classes = c;
@@ -18,5 +21,13 @@ public class Schedule {
 
     public void setClasses(ArrayList<Class> classes) {
         this.classes = classes;
+    }
+
+    public void addClass(Class c){
+        classes.add(c);
+    }
+
+    public Class getIndividualClass(int i){
+        return classes.get(i);
     }
 }

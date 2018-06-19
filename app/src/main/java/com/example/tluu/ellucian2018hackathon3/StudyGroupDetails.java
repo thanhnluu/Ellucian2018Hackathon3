@@ -1,16 +1,23 @@
 package com.example.tluu.ellucian2018hackathon3;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,11 +26,14 @@ public class StudyGroupDetails extends AppCompatActivity {
 
     TextView classname;
     TextView numMembers;
+    TextView messages;
     ListView listView;
     CustomAdapter myAdapter;
     ArrayList<String> dates;
     ArrayList<String> times;
     ArrayList<String> votes;
+    Dialog newPost;
+    EditText postText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +41,14 @@ public class StudyGroupDetails extends AppCompatActivity {
         setContentView(R.layout.activity_study_group_details);
         dates = new ArrayList<String>();
         times = new ArrayList<String>();
+        messages = (TextView)findViewById(R.id.Messages);
         votes = new ArrayList<String>();
+        newPost = new Dialog(this);
+        newPost.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        newPost.setContentView(R.layout.newpost);
+        newPost.setCancelable(false);
+        messages = (TextView) findViewById(R.id.Messages);
+        postText = (EditText) findViewById(R.id.postText);
         listView = (ListView) findViewById(R.id.mylist);
         classname = (TextView)findViewById(R.id.classname);
         numMembers = (TextView)findViewById(R.id.numMembers);
@@ -54,9 +71,20 @@ public class StudyGroupDetails extends AppCompatActivity {
         });
     }
 
+    public void vote(View v){
+        newPost.show();
+    }
+
     public void addClass(View v) {
         Intent intent = new Intent(this, AddClassSchedule.class);
         startActivityForResult(intent, 1);
+    }
+
+    public void post(View v) {
+            newPost.dismiss();
+            String content = postText.getText().toString();
+            String oldMessages = messages.getText().toString();
+            messages.setText(oldMessages + "\n\n" + content);
     }
 
     public class CustomAdapter extends BaseAdapter {

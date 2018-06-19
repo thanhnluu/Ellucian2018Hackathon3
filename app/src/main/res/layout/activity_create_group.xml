@@ -125,7 +125,7 @@
     <EditText
         android:id="@+id/description"
         android:layout_width="305dp"
-        android:layout_height="181dp"
+        android:layout_height="74dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
@@ -139,7 +139,7 @@
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.716" />
+        app:layout_constraintVertical_bias="0.584" />
 
     <TextView
         android:id="@+id/descriptionLbl"
@@ -177,7 +177,7 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.93"
+        app:layout_constraintVertical_bias="0.809"
         tools:text="@string/create_button" />
 
 </android.support.constraint.ConstraintLayout>

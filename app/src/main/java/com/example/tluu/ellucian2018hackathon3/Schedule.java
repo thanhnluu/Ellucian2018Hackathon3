@@ -5,27 +5,18 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Schedule {
-    ArrayList<Date> dates;
-    ArrayList<Time> time;
+    ArrayList<Class> classes;
 
-    public Schedule(ArrayList<Date> d, ArrayList<Time> t){
-        dates = d;
-        time = t;
+
+    public Schedule(ArrayList<Class> c){
+        classes = c;
     }
 
-    public ArrayList<Date> getDates() {
-        return dates;
+    public ArrayList<Class> getClasses() {
+        return classes;
     }
 
-    public ArrayList<Time> getTime() {
-        return time;
-    }
-
-    public void setDates(ArrayList<Date> dates) {
-        this.dates = dates;
-    }
-
-    public void setTime(ArrayList<Time> time) {
-        this.time = time;
+    public void setClasses(ArrayList<Class> classes) {
+        this.classes = classes;
     }
 }

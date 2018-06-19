@@ -1,6 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:fbutton="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#fcfcfc"
     android:layout_width="match_parent"
@@ -20,7 +19,7 @@
         android:fontFamily="monospace"
         android:textSize="35dp"/>
 
-    <info.hoang8f.widget.FButton
+    <Button
         android:id="@+id/addGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,8 +29,7 @@
         android:onClick="addGroup"
         android:text="+"
         android:textColor="#060606"
-        fbutton:buttonColor="#FFFFFF"
-        fbutton:shadowEnabled="true" />
+         />
 
     <ListView
         android:id="@+id/mylist"
@@ -41,7 +39,7 @@
         android:divider="#FFFFFF">
     </ListView>
 
-    <info.hoang8f.widget.FButton
+    <Button
         android:id="@+id/joinGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -50,8 +48,6 @@
         android:layout_margin="10dp"
         android:onClick="joinGroup"
         android:text="Join"
-        android:textColor="#060606"
-        fbutton:buttonColor="#FFFFFF"
-        fbutton:shadowEnabled="true" />
+        android:textColor="#060606" />
 </LinearLayout>
 

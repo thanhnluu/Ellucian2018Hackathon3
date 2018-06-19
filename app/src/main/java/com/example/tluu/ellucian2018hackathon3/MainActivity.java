@@ -38,7 +38,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Bundle bundle = new Bundle();
-                    bundle.putInt("STUDYGROUP", position);
+                    bundle.putString("CLASSNAME", className.get(position));
+                    bundle.putString("CLASSTIME", classTimes.get(position));
+                    bundle.putString("NUMMEMBERS", numMembers.get(position));
                     Intent intent = new Intent(MainActivity.this, StudyGroupDetails.class);
                     intent.putExtras(bundle);
                     startActivity(intent);
@@ -55,11 +57,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 1 && resultCode == RESULT_OK) {
             Toast.makeText(this, "Group successfully created", Toast.LENGTH_SHORT).show();
+            className.add(data.getExtras().getString("CLASSNAME"));
+            classTimes.add(data.getExtras().getString("CLASSTIME"));
+            numMembers.add(data.getExtras().getString("NUMMEMBER"));
+            myAdapter.notifyDataSetChanged();
         }
     }
 
     public void joinGroup (View v){
-        /*Logic for group*/
+
     }
 
     public class CustomAdapter extends BaseAdapter {

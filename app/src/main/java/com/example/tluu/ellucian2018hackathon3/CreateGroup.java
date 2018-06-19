@@ -1,5 +1,6 @@
 package com.example.tluu.ellucian2018hackathon3;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -40,16 +41,13 @@ public class CreateGroup extends AppCompatActivity {
 
         create.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                //grabs info from text boxes
-                pullGroupName();
-                pullClassTitle();
-                pullGroupSize();
-                pullDescription();
-
                 //update main group list code here**
-
-                //opens up the main activity view
-                openMainActivity();
+                Intent intent = new Intent();
+                intent.putExtra("CLASSNAME", pullClassTitle());
+                intent.putExtra("CLASSTIME", "");
+                intent.putExtra("NUMMEMBER", pullGroupSize());
+                setResult(Activity.RESULT_OK, intent);
+                finish();
             }
         });
     }

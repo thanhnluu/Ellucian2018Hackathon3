@@ -48,7 +48,7 @@ public class StudyGroupDetails extends AppCompatActivity {
         newPost.setContentView(R.layout.newpost);
         newPost.setCancelable(false);
         messages = (TextView) findViewById(R.id.Messages);
-        postText = (EditText) findViewById(R.id.postText);
+        postText = (EditText) newPost.findViewById(R.id.postText);
         listView = (ListView) findViewById(R.id.mylist);
         classname = (TextView)findViewById(R.id.classname);
         numMembers = (TextView)findViewById(R.id.numMembers);
@@ -85,6 +85,7 @@ public class StudyGroupDetails extends AppCompatActivity {
             String content = postText.getText().toString();
             String oldMessages = messages.getText().toString();
             messages.setText(oldMessages + "\n\n" + content);
+            postText.setText("");
     }
 
     public class CustomAdapter extends BaseAdapter {

@@ -1,6 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:fbutton="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#fcfcfc"
     android:layout_width="match_parent"
@@ -43,7 +42,7 @@
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <info.hoang8f.widget.FButton
+        <Button
             android:id="@+id/addClass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -52,10 +51,8 @@
             android:layout_margin="10dp"
             android:onClick="addClass"
             android:text="Add Class Schedule"
-            android:textColor="#060606"
-            fbutton:buttonColor="#FFFFFF"
-            fbutton:shadowEnabled="true" />
-        <info.hoang8f.widget.FButton
+            android:textColor="#060606" />
+        <Button
             android:id="@+id/vote"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -64,10 +61,26 @@
             android:layout_margin="10dp"
             android:onClick="vote"
             android:text="Vote for Time"
-            android:textColor="#060606"
-            fbutton:buttonColor="#FFFFFF"
-            fbutton:shadowEnabled="true" />
+            android:textColor="#060606" />
+
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/Messages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="TextView" />
+    <Button
+        android:id="@+id/createPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_gravity="left|top"
+        android:layout_margin="10dp"
+        android:onClick="vote"
+        android:text="Create Post"
+        android:textColor="#060606" />
 
 </LinearLayout>

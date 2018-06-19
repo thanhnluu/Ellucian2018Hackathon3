@@ -40,8 +40,8 @@
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Date      Time        Choice      Votes"
-        android:gravity="center"
+        android:text="Date          Time        Votes"
+        android:gravity="left"
         android:fontFamily="monospace"
         android:textSize="15dp"/>
 
@@ -73,6 +73,12 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Discussion"/>
     <TextView
         android:id="@+id/Messages"
         android:layout_width="match_parent"

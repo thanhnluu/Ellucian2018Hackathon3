@@ -32,8 +32,8 @@ public class StudyGroupDetails extends AppCompatActivity {
     ArrayList<String> dates;
     ArrayList<String> times;
     ArrayList<String> votes;
-    Dialog newPost;
-    EditText postText;
+    Dialog newPost, addTimeBox;
+    EditText postText, date, time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +47,14 @@ public class StudyGroupDetails extends AppCompatActivity {
         newPost.requestWindowFeature(Window.FEATURE_NO_TITLE);
         newPost.setContentView(R.layout.newpost);
         newPost.setCancelable(false);
+        addTimeBox = new Dialog(this);
+        addTimeBox.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        addTimeBox.setContentView(R.layout.add_schedule_form);
+        addTimeBox.setCancelable(false);
         messages = (TextView) findViewById(R.id.Messages);
         postText = (EditText) newPost.findViewById(R.id.postText);
+        date = (EditText) addTimeBox.findViewById(R.id.date);
+        time = (EditText) addTimeBox.findViewById(R.id.time);
         listView = (ListView) findViewById(R.id.mylist);
         classname = (TextView)findViewById(R.id.classname);
         numMembers = (TextView)findViewById(R.id.numMembers);
@@ -71,21 +77,30 @@ public class StudyGroupDetails extends AppCompatActivity {
         });
     }
 
-    public void vote(View v){
-        
+    public void addClass(View v) {
+       addTimeBox.show();
     }
 
-    public void addClass(View v) {
-        Intent intent = new Intent(this, AddClassSchedule.class);
-        startActivityForResult(intent, 1);
+    public void addTime(View v){
+        addTimeBox.dismiss();
+        dates.add(date.getText().toString().trim());
+        times.add(time.getText().toString().trim());
+        votes.add("0");
+        date.setText("");
+        time.setText("");
+        myAdapter.notifyDataSetChanged();
     }
 
     public void post(View v) {
             newPost.dismiss();
-            String content = postText.getText().toString();
+            String content = postText.getText().toString().trim();
             String oldMessages = messages.getText().toString();
             messages.setText(oldMessages + "\n\n" + content);
             postText.setText("");
+    }
+    
+    public void vote(View v){
+        newPost.show();
     }
 
     public class CustomAdapter extends BaseAdapter {

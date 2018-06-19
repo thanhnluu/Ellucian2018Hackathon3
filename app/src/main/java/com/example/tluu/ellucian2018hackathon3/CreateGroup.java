@@ -58,21 +58,21 @@ public class CreateGroup extends AppCompatActivity {
     }
 
     public String pullGroupName(){
-        groupName = groupN.getText().toString();
+        groupName = groupN.getText().toString().trim();
         return groupName;
     }
 
     public String pullClassTitle(){
-        classTitle = classN.getText().toString();
+        classTitle = classN.getText().toString().trim();
         return classTitle;
     }
 
     public String pullGroupSize(){
-        return size.getText().toString();
+        return size.getText().toString().trim();
     }
 
     public String pullDescription(){
-        description = descrip.getText().toString();
+        description = descrip.getText().toString().trim();
         return description;
     }
 }

@@ -36,6 +36,23 @@
         android:fontFamily="monospace"
         android:textSize="15dp"/>
 
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Date      Time        Choice      Votes"
+        android:gravity="center"
+        android:fontFamily="monospace"
+        android:textSize="15dp"/>
+
+    <ListView
+        android:id="@+id/mylist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:dividerHeight="0.5dp"
+        android:divider="#FFFFFF">
+    </ListView>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,16 +69,6 @@
             android:onClick="addClass"
             android:text="Add Class Schedule"
             android:textColor="#060606" />
-        <Button
-            android:id="@+id/vote"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:layout_gravity="left|top"
-            android:layout_margin="10dp"
-            android:onClick="vote"
-            android:text="Vote for Time"
-            android:textColor="#060606" />
 
 
     </LinearLayout>
@@ -70,8 +77,7 @@
         android:id="@+id/Messages"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="TextView" />
+        android:layout_weight="1" />
     <Button
         android:id="@+id/createPost"
         android:layout_width="wrap_content"

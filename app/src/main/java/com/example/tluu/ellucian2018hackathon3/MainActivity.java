@@ -11,7 +11,7 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import android.widget.Button;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String> className;
     ArrayList<String> classTimes;
     ArrayList<String> numMembers;
-
+    Button add;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         numMembers = new ArrayList<String>();
         myAdapter = new CustomAdapter(this, className, classTimes, numMembers);
         listView.setAdapter(myAdapter);
+        add = (Button) findViewById(R.id.addGroup);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -44,6 +45,12 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, StudyGroupDetails.class);
                     intent.putExtras(bundle);
                     startActivity(intent);
+            }
+        });
+
+        add.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                openCreateGroup();
             }
         });
     }
@@ -118,5 +125,9 @@ public class MainActivity extends AppCompatActivity {
             return convertView;
         }
 
+    }
+    public void openCreateGroup(){
+        Intent intent = new Intent(this,CreateGroup.class);
+        startActivity(intent);
     }
 }

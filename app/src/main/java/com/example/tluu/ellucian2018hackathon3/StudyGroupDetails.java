@@ -29,6 +29,9 @@ public class StudyGroupDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_study_group_details);
+        dates = new ArrayList<String>();
+        times = new ArrayList<String>();
+        votes = new ArrayList<String>();
         listView = (ListView) findViewById(R.id.mylist);
         classname = (TextView)findViewById(R.id.classname);
         numMembers = (TextView)findViewById(R.id.numMembers);

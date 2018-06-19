@@ -86,14 +86,14 @@ import java.util.List;
                 Context context;
                 List<String> classname;
                 List<String> classTimes;
-                List<String> numMembers;
+                List<String> numVotes;
 
-                public CustomAdapter(Context context, List<String> className, List<String> classTimes, List<String> numMembers) {
+                public CustomAdapter(Context context, List<String> className, List<String> classTimes, List<String> numVotes) {
                     // TODO Auto-generated constructor stub
                     this.context = context;
                     this.classname = className;
                     this.classTimes = classTimes;
-                    this.numMembers = numMembers;
+                    this.numVotes = numVotes;
                 }
 
                 @Override
@@ -125,10 +125,10 @@ import java.util.List;
 
                     TextView name = (TextView) convertView.findViewById(R.id.classname);
                     TextView time = (TextView) convertView.findViewById(R.id.classTime);
-                    TextView members = (TextView) convertView.findViewById(R.id.numMembers);
+                    TextView vote = (TextView) convertView.findViewById(R.id.numMembers);
                     name.setText(classname.get(position));
                     time.setText(classTimes.get(position));
-                    members.setText(numMembers.get(position));
+                    vote.setText(numVotes.get(position));
                     return convertView;
                 }
 

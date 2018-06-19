@@ -72,7 +72,7 @@ public class StudyGroupDetails extends AppCompatActivity {
     }
 
     public void vote(View v){
-        newPost.show();
+        
     }
 
     public void addClass(View v) {

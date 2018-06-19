@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Study Time</string>
+    <string name="groupName_label">Group Name:</string>
+    <string name="classTitle_label">Class Title:</string>
+    <string name="groupSize_label">Group Size:</string>
+    <string name="description_label">Description:</string>
+    <string name="create_button">Create Group</string>
 </resources>

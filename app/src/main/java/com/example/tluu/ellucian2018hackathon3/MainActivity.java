@@ -46,6 +46,18 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
             }
         });
+
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String oldNumMembers = numMembers.get(i);
+                numMembers.set(i, Integer.toString(Integer.parseInt(oldNumMembers) + 1));
+                myAdapter.notifyDataSetChanged();
+                String message = "Joined group " + className.get(i);
+                Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        });
     }
 
     public void addGroup(View v) {
@@ -62,10 +74,6 @@ public class MainActivity extends AppCompatActivity {
             numMembers.add(data.getExtras().getString("NUMMEMBER"));
             myAdapter.notifyDataSetChanged();
         }
-    }
-
-    public void joinGroup (View v){
-
     }
 
     public class CustomAdapter extends BaseAdapter {

@@ -67,9 +67,8 @@ public class CreateGroup extends AppCompatActivity {
         return classTitle;
     }
 
-    public int pullGroupSize(){
-        groupSize = Integer.parseInt(size.getText().toString());
-        return groupSize;
+    public String pullGroupSize(){
+        return size.getText().toString();
     }
 
     public String pullDescription(){
